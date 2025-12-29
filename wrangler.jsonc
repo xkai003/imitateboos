@@ -1,0 +1,11 @@
+{
+  "name": "imitateboos",
+  "compatibility_date": "2025-12-29", // 使用今天的日期
+  "assets": {
+    "directory": "./public", // 替换为你的静态资源目录
+    "include": ["*.html", "*.css", "*.js", "*.png", "*.jpg", "*.jpeg", "*.gif", "*.svg"] // 包含的文件类型，按需增减
+  },
+   "vars": {
+    "MY_VARIABLE": "my_value"  // 你的环境变量
+  }
+}
