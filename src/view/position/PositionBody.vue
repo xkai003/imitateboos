@@ -6,7 +6,7 @@
       <div class="box">
         <div class="lineone">
           <span>{{ item.lineonespan1 }}</span>
-          <span>{{ item.lineonespan2 }}</span>
+          <span class="lineonespan2">{{ item.lineonespan2 }}</span>
         </div>
         <div class="linetwo">
           <span>{{ item.linetwospan }}</span>
@@ -1071,6 +1071,9 @@ a{
   justify-content: space-between;
   font-size: 20px;
   color: black;
+}
+.lineone .lineonespan2{
+  color: rgb(5, 167, 5);
 }
 .linethree span{
   margin-right: 5px;
