@@ -20,9 +20,8 @@
 
 <style scoped>
 .box1{
-  /* width: 100%;
-  height: 98vh; */
-  background-color: #eff0f1;
+  background-color: #f5f6f7;
   padding: 10px;
+  margin-bottom: 50px;
 }
 </style>
