@@ -1,6 +1,7 @@
 <template>
   <div>
-    <router-link :to="item.catdlink" v-for="item in list" :key="item.id">
+    <!-- <router-link :to="item.catdlink" v-for="item in list" :key="item.id"> -->
+    <router-link :to="getProductUrl(item)" v-for="item in list" :key="item.id">
     <!-- <a href=""  > -->
       <div class="box">
         <div class="lineone">
@@ -51,7 +52,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "王女士*招聘者",
           "linefourspan2": "回复率高",
-          "linefourspan3": "广州&nbsp;天河区&nbsp;岗顶"
+          "linefourspan3": "广州.天河区.岗顶"
         },
         {
           "catdlink": "/jobdetails",
@@ -65,7 +66,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "李经理*招聘者",
           "linefourspan2": "已认证",
-          "linefourspan3": "深圳&nbsp;南山区&nbsp;科技园"
+          "linefourspan3": "深圳.南山区.科技园"
         },
         {
           "catdlink": "/jobdetails",
@@ -79,7 +80,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "张先生*招聘者",
           "linefourspan2": "回复率高",
-          "linefourspan3": "北京&nbsp;海淀区&nbsp;中关村"
+          "linefourspan3": "北京.海淀区.中关村"
         },
         {
           "catdlink": "/jobdetails",
@@ -93,7 +94,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "刘女士*招聘者",
           "linefourspan2": "回复率高",
-          "linefourspan3": "上海&nbsp;浦东新区&nbsp;陆家嘴"
+          "linefourspan3": "上海.浦东新区.陆家嘴"
         },
         {
           "catdlink": "/jobdetails",
@@ -107,7 +108,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "陈经理*招聘者",
           "linefourspan2": "已认证",
-          "linefourspan3": "杭州&nbsp;西湖区&nbsp;文三路"
+          "linefourspan3": "杭州.西湖区.文三路"
         },
         {
           "catdlink": "/jobdetails",
@@ -121,7 +122,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "杨先生*招聘者",
           "linefourspan2": "回复率高",
-          "linefourspan3": "成都&nbsp;武侯区&nbsp;天府广场"
+          "linefourspan3": "成都.武侯区.天府广场"
         },
         {
           "catdlink": "/jobdetails",
@@ -135,7 +136,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "赵女士*招聘者",
           "linefourspan2": "回复率高",
-          "linefourspan3": "武汉&nbsp;洪山区&nbsp;光谷"
+          "linefourspan3": "武汉.洪山区.光谷"
         },
         {
           "catdlink": "/jobdetails",
@@ -149,7 +150,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "黄经理*招聘者",
           "linefourspan2": "已认证",
-          "linefourspan3": "西安&nbsp;雁塔区&nbsp;高新区"
+          "linefourspan3": "西安.雁塔区.高新区"
         },
         {
           "catdlink": "/jobdetails",
@@ -163,7 +164,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "周先生*招聘者",
           "linefourspan2": "回复率高",
-          "linefourspan3": "南京&nbsp;江宁区&nbsp;大学城"
+          "linefourspan3": "南京.江宁区.大学城"
         },
         {
           "catdlink": "/jobdetails",
@@ -177,7 +178,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "吴女士*招聘者",
           "linefourspan2": "回复率高",
-          "linefourspan3": "苏州&nbsp;工业园区"
+          "linefourspan3": "苏州.工业园区"
         },
         {
           "catdlink": "/jobdetails",
@@ -191,7 +192,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "郑经理*招聘者",
           "linefourspan2": "已认证",
-          "linefourspan3": "广州&nbsp;白云区&nbsp;嘉禾"
+          "linefourspan3": "广州.白云区.嘉禾"
         },
         {
           "catdlink": "/jobdetails",
@@ -205,7 +206,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "马先生*招聘者",
           "linefourspan2": "回复率高",
-          "linefourspan3": "深圳&nbsp;福田区&nbsp;华强北"
+          "linefourspan3": "深圳.福田区.华强北"
         },
         {
           "catdlink": "/jobdetails",
@@ -219,7 +220,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "朱女士*招聘者",
           "linefourspan2": "回复率高",
-          "linefourspan3": "北京&nbsp;朝阳区&nbsp;CBD"
+          "linefourspan3": "北京.朝阳区.CBD"
         },
         {
           "catdlink": "/jobdetails",
@@ -233,7 +234,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "胡经理*招聘者",
           "linefourspan2": "已认证",
-          "linefourspan3": "上海&nbsp;徐汇区&nbsp;漕河泾"
+          "linefourspan3": "上海.徐汇区.漕河泾"
         },
         {
           "catdlink": "/jobdetails",
@@ -247,7 +248,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "林先生*招聘者",
           "linefourspan2": "回复率高",
-          "linefourspan3": "杭州&nbsp;滨江区&nbsp;阿里巴巴"
+          "linefourspan3": "杭州.滨江区.阿里巴巴"
         },
         {
           "catdlink": "/jobdetails",
@@ -261,7 +262,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "郭女士*招聘者",
           "linefourspan2": "回复率高",
-          "linefourspan3": "成都&nbsp;高新区&nbsp;软件园"
+          "linefourspan3": "成都.高新区.软件园"
         },
         {
           "catdlink": "/jobdetails",
@@ -275,7 +276,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "何经理*招聘者",
           "linefourspan2": "已认证",
-          "linefourspan3": "武汉&nbsp;武昌区&nbsp;中南路"
+          "linefourspan3": "武汉.武昌区.中南路"
         },
         {
           "catdlink": "/jobdetails",
@@ -289,7 +290,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "高先生*招聘者",
           "linefourspan2": "回复率高",
-          "linefourspan3": "西安&nbsp;未央区&nbsp;经济开发区"
+          "linefourspan3": "西安.未央区.经济开发区"
         },
         {
           "catdlink": "/jobdetails",
@@ -303,7 +304,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "罗女士*招聘者",
           "linefourspan2": "回复率高",
-          "linefourspan3": "南京&nbsp;秦淮区&nbsp;夫子庙"
+          "linefourspan3": "南京.秦淮区.夫子庙"
         },
         {
           "catdlink": "/jobdetails",
@@ -317,7 +318,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "郑经理*招聘者",
           "linefourspan2": "已认证",
-          "linefourspan3": "苏州&nbsp;姑苏区&nbsp;观前街"
+          "linefourspan3": "苏州.姑苏区.观前街"
         },
         {
           "catdlink": "/jobdetails",
@@ -331,7 +332,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "王先生*招聘者",
           "linefourspan2": "回复率高",
-          "linefourspan3": "广州&nbsp;黄埔区&nbsp;科学城"
+          "linefourspan3": "广州.黄埔区.科学城"
         },
         {
           "catdlink": "/jobdetails",
@@ -345,7 +346,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "李女士*招聘者",
           "linefourspan2": "回复率高",
-          "linefourspan3": "深圳&nbsp;宝安区&nbsp;西乡"
+          "linefourspan3": "深圳.宝安区.西乡"
         },
         {
           "catdlink": "/jobdetails",
@@ -359,7 +360,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "张经理*招聘者",
           "linefourspan2": "已认证",
-          "linefourspan3": "北京&nbsp;海淀区&nbsp;上地"
+          "linefourspan3": "北京.海淀区.上地"
         },
         {
           "catdlink": "/jobdetails",
@@ -373,7 +374,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "刘先生*招聘者",
           "linefourspan2": "回复率高",
-          "linefourspan3": "上海&nbsp;静安区&nbsp;南京西路"
+          "linefourspan3": "上海.静安区.南京西路"
         },
         {
           "catdlink": "/jobdetails",
@@ -387,7 +388,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "陈女士*招聘者",
           "linefourspan2": "回复率高",
-          "linefourspan3": "杭州&nbsp;江干区&nbsp;钱江新城"
+          "linefourspan3": "杭州.江干区.钱江新城"
         },
         {
           "catdlink": "/jobdetails",
@@ -401,7 +402,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "杨经理*招聘者",
           "linefourspan2": "已认证",
-          "linefourspan3": "成都&nbsp;锦江区&nbsp;春熙路"
+          "linefourspan3": "成都.锦江区.春熙路"
         },
         {
           "catdlink": "/jobdetails",
@@ -415,7 +416,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "赵先生*招聘者",
           "linefourspan2": "回复率高",
-          "linefourspan3": "武汉&nbsp;江汉区&nbsp;王家墩"
+          "linefourspan3": "武汉.江汉区.王家墩"
         },
         {
           "catdlink": "/jobdetails",
@@ -429,7 +430,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "黄女士*招聘者",
           "linefourspan2": "回复率高",
-          "linefourspan3": "西安&nbsp;雁塔区&nbsp;小寨"
+          "linefourspan3": "西安.雁塔区.小寨"
         },
         {
           "catdlink": "/jobdetails",
@@ -443,7 +444,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "周经理*招聘者",
           "linefourspan2": "已认证",
-          "linefourspan3": "南京&nbsp;建邺区&nbsp;河西"
+          "linefourspan3": "南京.建邺区.河西"
         },
         {
           "catdlink": "/jobdetails",
@@ -457,7 +458,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "吴先生*招聘者",
           "linefourspan2": "回复率高",
-          "linefourspan3": "苏州&nbsp;吴中区&nbsp;木渎"
+          "linefourspan3": "苏州.吴中区.木渎"
         },
         {
           "catdlink": "/jobdetails",
@@ -471,7 +472,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "郑女士*招聘者",
           "linefourspan2": "回复率高",
-          "linefourspan3": "广州&nbsp;荔湾区&nbsp;上下九"
+          "linefourspan3": "广州.荔湾区.上下九"
         },
         {
           "catdlink": "/jobdetails",
@@ -485,7 +486,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "马经理*招聘者",
           "linefourspan2": "已认证",
-          "linefourspan3": "深圳&nbsp;龙岗区&nbsp;坂田"
+          "linefourspan3": "深圳.龙岗区.坂田"
         },
         {
           "catdlink": "/jobdetails",
@@ -499,7 +500,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "朱先生*招聘者",
           "linefourspan2": "回复率高",
-          "linefourspan3": "北京&nbsp;丰台区&nbsp;总部基地"
+          "linefourspan3": "北京.丰台区.总部基地"
         },
         {
           "catdlink": "/jobdetails",
@@ -513,7 +514,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "胡女士*招聘者",
           "linefourspan2": "回复率高",
-          "linefourspan3": "上海&nbsp;虹口区&nbsp;北外滩"
+          "linefourspan3": "上海.虹口区.北外滩"
         },
         {
           "catdlink": "/jobdetails",
@@ -527,7 +528,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "林经理*招聘者",
           "linefourspan2": "已认证",
-          "linefourspan3": "杭州&nbsp;西湖区&nbsp;黄龙"
+          "linefourspan3": "杭州.西湖区.黄龙"
         },
         {
           "catdlink": "/jobdetails",
@@ -541,7 +542,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "郭先生*招聘者",
           "linefourspan2": "回复率高",
-          "linefourspan3": "成都&nbsp;成华区&nbsp;建设路"
+          "linefourspan3": "成都.成华区.建设路"
         },
         {
           "catdlink": "/jobdetails",
@@ -555,7 +556,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "何女士*招聘者",
           "linefourspan2": "回复率高",
-          "linefourspan3": "武汉&nbsp;洪山区&nbsp;街道口"
+          "linefourspan3": "武汉.洪山区.街道口"
         },
         {
           "catdlink": "/jobdetails",
@@ -569,7 +570,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "高经理*招聘者",
           "linefourspan2": "已认证",
-          "linefourspan3": "西安&nbsp;高新区&nbsp;锦业路"
+          "linefourspan3": "西安.高新区.锦业路"
         },
         {
           "catdlink": "/jobdetails",
@@ -583,7 +584,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "罗先生*招聘者",
           "linefourspan2": "回复率高",
-          "linefourspan3": "南京&nbsp;鼓楼区&nbsp;湖南路"
+          "linefourspan3": "南京.鼓楼区.湖南路"
         },
         {
           "catdlink": "/jobdetails",
@@ -597,7 +598,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "郑女士*招聘者",
           "linefourspan2": "回复率高",
-          "linefourspan3": "苏州&nbsp;相城区&nbsp;元和"
+          "linefourspan3": "苏州.相城区.元和"
         },
         {
           "catdlink": "/jobdetails",
@@ -611,7 +612,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "王先生*招聘者",
           "linefourspan2": "回复率高",
-          "linefourspan3": "广州&nbsp;天河区&nbsp;珠江新城"
+          "linefourspan3": "广州.天河区.珠江新城"
         },
         {
           "catdlink": "/jobdetails",
@@ -625,7 +626,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "李经理*招聘者",
           "linefourspan2": "已认证",
-          "linefourspan3": "深圳&nbsp;南山区&nbsp;蛇口"
+          "linefourspan3": "深圳.南山区.蛇口"
         },
         {
           "catdlink": "/jobdetails",
@@ -639,7 +640,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "张先生*招聘者",
           "linefourspan2": "回复率高",
-          "linefourspan3": "北京&nbsp;海淀区&nbsp;五道口"
+          "linefourspan3": "北京.海淀区.五道口"
         },
         {
           "catdlink": "/jobdetails",
@@ -653,7 +654,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "刘女士*招聘者",
           "linefourspan2": "回复率高",
-          "linefourspan3": "上海&nbsp;浦东新区&nbsp;张江"
+          "linefourspan3": "上海.浦东新区.张江"
         },
         {
           "catdlink": "/jobdetails",
@@ -667,7 +668,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "陈经理*招聘者",
           "linefourspan2": "已认证",
-          "linefourspan3": "杭州&nbsp;滨江区&nbsp;网易"
+          "linefourspan3": "杭州.滨江区.网易"
         },
         {
           "catdlink": "/jobdetails",
@@ -681,7 +682,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "杨先生*招聘者",
           "linefourspan2": "回复率高",
-          "linefourspan3": "成都&nbsp;武侯区&nbsp;红牌楼"
+          "linefourspan3": "成都.武侯区.红牌楼"
         },
         {
           "catdlink": "/jobdetails",
@@ -695,7 +696,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "赵女士*招聘者",
           "linefourspan2": "回复率高",
-          "linefourspan3": "武汉&nbsp;武昌区&nbsp;水果湖"
+          "linefourspan3": "武汉.武昌区.水果湖"
         },
         {
           "catdlink": "/jobdetails",
@@ -709,7 +710,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "黄经理*招聘者",
           "linefourspan2": "已认证",
-          "linefourspan3": "西安&nbsp;碑林区&nbsp;南大街"
+          "linefourspan3": "西安.碑林区.南大街"
         },
         {
           "catdlink": "/jobdetails",
@@ -723,7 +724,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "周先生*招聘者",
           "linefourspan2": "回复率高",
-          "linefourspan3": "南京&nbsp;建邺区&nbsp;奥体"
+          "linefourspan3": "南京.建邺区.奥体"
         },
         {
           "catdlink": "/jobdetails",
@@ -737,7 +738,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "吴女士*招聘者",
           "linefourspan2": "回复率高",
-          "linefourspan3": "苏州&nbsp;工业园区&nbsp;独墅湖"
+          "linefourspan3": "苏州.工业园区.独墅湖"
         },
         {
           "catdlink": "/jobdetails",
@@ -751,7 +752,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "郑经理*招聘者",
           "linefourspan2": "已认证",
-          "linefourspan3": "广州&nbsp;白云区&nbsp;机场路"
+          "linefourspan3": "广州.白云区.机场路"
         },
         {
           "catdlink": "/jobdetails",
@@ -765,7 +766,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "马先生*招聘者",
           "linefourspan2": "回复率高",
-          "linefourspan3": "深圳&nbsp;龙华区&nbsp;龙华"
+          "linefourspan3": "深圳.龙华区.龙华"
         },
         {
           "catdlink": "/jobdetails",
@@ -779,7 +780,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "朱经理*招聘者",
           "linefourspan2": "已认证",
-          "linefourspan3": "北京&nbsp;朝阳区&nbsp;三里屯"
+          "linefourspan3": "北京.朝阳区.三里屯"
         },
         {
           "catdlink": "/jobdetails",
@@ -793,7 +794,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "胡女士*招聘者",
           "linefourspan2": "回复率高",
-          "linefourspan3": "上海&nbsp;黄浦区&nbsp;人民广场"
+          "linefourspan3": "上海.黄浦区.人民广场"
         },
         {
           "catdlink": "/jobdetails",
@@ -807,7 +808,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "林先生*招聘者",
           "linefourspan2": "回复率高",
-          "linefourspan3": "杭州&nbsp;拱墅区&nbsp;武林"
+          "linefourspan3": "杭州.拱墅区.武林"
         },
         {
           "catdlink": "/jobdetails",
@@ -821,7 +822,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "郭经理*招聘者",
           "linefourspan2": "已认证",
-          "linefourspan3": "成都&nbsp;高新区&nbsp;世纪城"
+          "linefourspan3": "成都.高新区.世纪城"
         },
         {
           "catdlink": "/jobdetails",
@@ -835,7 +836,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "何先生*招聘者",
           "linefourspan2": "回复率高",
-          "linefourspan3": "武汉&nbsp;东湖高新区&nbsp;金融港"
+          "linefourspan3": "武汉.东湖高新区.金融港"
         },
         {
           "catdlink": "/jobdetails",
@@ -849,7 +850,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "高女士*招聘者",
           "linefourspan2": "回复率高",
-          "linefourspan3": "西安&nbsp;高新区&nbsp;唐延路"
+          "linefourspan3": "西安.高新区.唐延路"
         },
         {
           "catdlink": "/jobdetails",
@@ -863,7 +864,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "罗经理*招聘者",
           "linefourspan2": "已认证",
-          "linefourspan3": "南京&nbsp;江宁区&nbsp;将军大道"
+          "linefourspan3": "南京.江宁区.将军大道"
         },
         {
           "catdlink": "/jobdetails",
@@ -877,7 +878,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "郑先生*招聘者",
           "linefourspan2": "回复率高",
-          "linefourspan3": "苏州&nbsp;昆山市&nbsp;玉山"
+          "linefourspan3": "苏州.昆山市.玉山"
         },
         {
           "catdlink": "/jobdetails",
@@ -891,7 +892,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "王先生*招聘者",
           "linefourspan2": "回复率高",
-          "linefourspan3": "广州&nbsp;天河区&nbsp;体育西路"
+          "linefourspan3": "广州.天河区.体育西路"
         },
         {
           "catdlink": "/jobdetails",
@@ -905,7 +906,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "李经理*招聘者",
           "linefourspan2": "已认证",
-          "linefourspan3": "深圳&nbsp;南山区&nbsp;科技园"
+          "linefourspan3": "深圳.南山区.科技园"
         },
         {
           "catdlink": "/jobdetails",
@@ -919,7 +920,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "张先生*招聘者",
           "linefourspan2": "回复率高",
-          "linefourspan3": "北京&nbsp;海淀区&nbsp;中关村"
+          "linefourspan3": "北京.海淀区.中关村"
         },
         {
           "catdlink": "/jobdetails",
@@ -933,7 +934,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "刘女士*招聘者",
           "linefourspan2": "回复率高",
-          "linefourspan3": "上海&nbsp;浦东新区&nbsp;陆家嘴"
+          "linefourspan3": "上海.浦东新区.陆家嘴"
         },
         {
           "catdlink": "/jobdetails",
@@ -947,7 +948,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "陈经理*招聘者",
           "linefourspan2": "已认证",
-          "linefourspan3": "杭州&nbsp;西湖区&nbsp;文三路"
+          "linefourspan3": "杭州.西湖区.文三路"
         },
         {
           "catdlink": "/jobdetails",
@@ -961,7 +962,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "杨先生*招聘者",
           "linefourspan2": "回复率高",
-          "linefourspan3": "成都&nbsp;武侯区&nbsp;天府广场"
+          "linefourspan3": "成都.武侯区.天府广场"
         },
         {
           "catdlink": "/jobdetails",
@@ -975,7 +976,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "赵女士*招聘者",
           "linefourspan2": "回复率高",
-          "linefourspan3": "武汉&nbsp;洪山区&nbsp;光谷"
+          "linefourspan3": "武汉.洪山区.光谷"
         },
         {
           "catdlink": "/jobdetails",
@@ -989,7 +990,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "黄经理*招聘者",
           "linefourspan2": "已认证",
-          "linefourspan3": "西安&nbsp;雁塔区&nbsp;高新区"
+          "linefourspan3": "西安.雁塔区.高新区"
         },
         {
           "catdlink": "/jobdetails",
@@ -1003,7 +1004,7 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "周先生*招聘者",
           "linefourspan2": "回复率高",
-          "linefourspan3": "南京&nbsp;江宁区&nbsp;大学城"
+          "linefourspan3": "南京.江宁区.大学城"
         },
         {
           "catdlink": "/jobdetails",
@@ -1017,9 +1018,27 @@ export default {
           "linefourimg": "/src/assets/avatar.jpg",
           "linefourspan1": "吴女士*招聘者",
           "linefourspan2": "回复率高",
-          "linefourspan3": "苏州&nbsp;工业园区"
+          "linefourspan3": "苏州.工业园区"
         }
       ]
+    }
+  },
+  // 路由传参
+  methods:{
+    getProductUrl(product){
+      // 通过/ProductDetails?参数名 的路由传参的方式把商品数据传递给/ProductDetails页面。
+      return '/jobdetails?id=' + product.id + //id
+      '&lineonespan1=' + encodeURIComponent(product.lineonespan1) + 
+      '&lineonespan2=' + encodeURIComponent(product.lineonespan2) + 
+      '&linetwospan=' + encodeURIComponent(product.linetwospan) + 
+      '&linethreespan1=' + encodeURIComponent(product.linethreespan1) +
+      '&linethreespan2=' + encodeURIComponent(product.linethreespan2) +
+      '&linethreespan3=' + encodeURIComponent(product.linethreespan3) +
+      '&linethreespan4=' + encodeURIComponent(product.linethreespan4) +
+      '&linefourimg=' + encodeURIComponent(product.linefourimg) +
+      '&linefourspan1=' + encodeURIComponent(product.linefourspan1) +
+      '&linefourspan2=' + encodeURIComponent(product.linefourspan2) +
+      '&linefourspan3=' + encodeURIComponent(product.linefourspan3)
     }
   }
 }

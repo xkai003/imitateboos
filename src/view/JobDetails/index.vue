@@ -1,12 +1,13 @@
 <template>
   <div>
     <div class="head">
-        <span class="title">前端开发</span>
-        <span class="salary">1-1.5万元</span>
+        <span class="title">{{ $route.query.lineonespan1 }}</span>
+        <span class="salary">{{ $route.query.lineonespan2 }}</span>
         <div class="box">
-            <span>广州*海珠区*海珠广场</span>
-            <span>1-3年</span>
-            <span>大专</span>
+            <span>{{ $route.query.linefourspan3 }}</span>
+            <span>{{ $route.query.linethreespan1 }}</span>
+            <span>{{ $route.query.linethreespan4 }}</span>
+            <span>{{ $route.query.linethreespan2 }}</span>
         </div>
     </div>
     <a href="">
@@ -14,8 +15,8 @@
             <img src="../../assets/avatar.jpg" alt="">
             <div class="space-between">
                 <div class="left">
-                    <span>唐先生</span>
-                    <span>小凯集团*招聘主管</span>
+                    <span>{{ $route.query.linefourspan1 }}</span>
+                    <span>{{ $route.query.linetwospan }}*HR</span>
                     <span>今日活跃</span>
                 </div>
                 <div class="right">
@@ -26,12 +27,8 @@
     </a>
     <div class="details">
         <p>职位详情</p>
-        <span class="label">Vue</span>
-        <span class="label">Vue</span>
-        <span class="label">Vue</span>
-        <span class="label">Vue</span>
-        <span class="label">Vue</span>
-        <span class="label">Vue</span>
+        <span class="label">{{ $route.query.linethreespan3 }}</span>
+        <span class="label">{{ $route.query.linethreespan4 }}</span>
         <p class="zzms">职责描述：</p>
         <li>1、能按时完成各项前端研发手机及研发任务；</li>
         <li>2、能指导处理前端开发的各项问题；</li>
@@ -47,8 +44,8 @@
             <img src="../../assets/avatar.jpg" alt="">
             <div class="space-between">
                 <div class="left">
-                    <span>唐先生</span>
-                    <span>小凯集团*招聘主管</span>
+                    <span>{{ $route.query.linetwospan }}</span>
+                    <span>不需要融资*20-99人</span>
                     <span>今日活跃</span>
                 </div>
                 <div class="right">
