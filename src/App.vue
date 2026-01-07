@@ -16,7 +16,7 @@ export default {
   },
   computed: {
     noNavRoutes () {
-      return ['/JobDetails'] // 不显示导航栏的路由
+      return ['/jobdetails'] // 不显示导航栏的路由
     }
   }
 }
