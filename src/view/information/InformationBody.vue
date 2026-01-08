@@ -1,5 +1,5 @@
 <template>
-  <a href="" v-for="item in list" :key="item.id">
+  <router-link to="/Chat_interface" v-for="item in list" :key="item.id">
     <div class="box">
       <div class="left">
         <img :src="item.hardimg" alt="">
@@ -15,7 +15,7 @@
         </div>
       </div>
     </div>
-  </a>
+  </router-link>
 </template>
 
 <script>

@@ -18,6 +18,10 @@ const routes = [
     component: () => import ('../view/information/index.vue')
   },
   {
+    path: '/Chat_interface',
+    component: () => import ('../view/Chat_interface/index.vue')
+  },
+  {
     path: '/mine',
     component: () => import('../view/mine/index.vue')
   }

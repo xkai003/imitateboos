@@ -16,7 +16,7 @@ export default {
   },
   computed: {
     noNavRoutes () {
-      return ['/jobdetails'] // 不显示导航栏的路由
+      return ['/jobdetails', '/Chat_interface'] // 不显示导航栏的路由
     }
   }
 }
