@@ -3,7 +3,7 @@
     <div class="head">
         <p>以下是30天内的聊天记录</p>
         <p>{{ $route.query.time|| "15:00" }}</p>
-        
+
     </div>
     <div class="box">
         <div class="lineone">

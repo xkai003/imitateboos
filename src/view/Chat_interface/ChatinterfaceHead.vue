@@ -17,21 +17,39 @@
       </div>
     </div>
     <div class="body">
-      <div>
+      <button @click="ExchangePhone">
         <svg t="1767854507084" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="6195"><path d="M256 102.4a102.4 102.4 0 0 0-102.4 102.4v614.4a102.4 102.4 0 0 0 102.4 102.4h512a102.4 102.4 0 0 0 102.4-102.4V204.8a102.4 102.4 0 0 0-102.4-102.4H256m0-102.4h512a204.8 204.8 0 0 1 204.8 204.8v614.4a204.8 204.8 0 0 1-204.8 204.8H256a204.8 204.8 0 0 1-204.8-204.8V204.8a204.8 204.8 0 0 1 204.8-204.8z" fill="#2c2c2c" p-id="6196"></path><path d="M102.4 230.4h844.8v102.4H102.4z" fill="#2c2c2c" p-id="6197"></path><path d="M460.8 665.6h102.4a51.2 51.2 0 0 1 51.2 51.2 51.2 51.2 0 0 1-51.2 51.2h-102.4a51.2 51.2 0 0 1-51.2-51.2 51.2 51.2 0 0 1 51.2-51.2z" fill="#2c2c2c" p-id="6198"></path></svg>
         <span>换电话</span>
-      </div>
-      <div>
+      </button>
+      <button @click="ExchangeWeChat">
         <svg t="1767854570390" class="icon" viewBox="0 0 1154 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7284"><path d="M429.43248 402.638041m-80.51859 0a80.51859 80.51859 0 1 0 161.03718 0 80.51859 80.51859 0 1 0-161.03718 0Z" fill="#2c2c2c" p-id="7285"></path><path d="M724.66731 402.638041m-80.51859 0a80.51859 80.51859 0 1 0 161.03718 0 80.51859 80.51859 0 1 0-161.03718 0Z" fill="#2c2c2c" p-id="7286"></path><path d="M143.027855 1024a53.67906 53.67906 0 0 1-53.67906-55.853062l7.917662-195.31126A445.724075 445.724075 0 0 1 0 496.576396a435.686091 435.686091 0 0 1 46.80814-196.384841 498.705307 498.705307 0 0 1 125.501643-157.735918A625.092654 625.092654 0 0 1 577.049895 0.04509a625.092654 625.092654 0 0 1 404.766952 142.410547 498.705307 498.705307 0 0 1 125.501643 157.735918 435.471374 435.471374 0 0 1 0 392.769682 498.678468 498.678468 0 0 1-125.501643 157.735918A625.119494 625.119494 0 0 1 577.049895 993.107701a658.829943 658.829943 0 0 1-201.967463-31.214373l-217.775947 60.174226a53.67906 53.67906 0 0 1-14.27863 1.932446zM577.049895 107.40321c-259.001465 0-469.691775 174.456945-469.691775 389.173186a342.767638 342.767638 0 0 0 85.322866 223.385408 53.67906 53.67906 0 0 1 12.695098 36.958033l-5.74366 142.088472 162.701231-44.956213a53.67906 53.67906 0 0 1 32.207436 1.100421 549.807772 549.807772 0 0 0 182.508804 30.597064c259.001465 0 469.691775-174.456945 469.691776-389.173185s-210.690311-389.173185-469.691776-389.173186z" fill="#2c2c2c" p-id="7287"></path></svg>
         <span>换微信</span>
-      </div>
-      <div>
+      </button>
+      <button>
         <svg t="1766503574696" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15707"><path d="M665.514667 38.997333A133.888 133.888 0 0 0 592.512 1.28L215.765333 0c-73.386667 0-104.149333 30.336-104.149333 104.405333v779.264C116.394667 953.6 145.322667 981.333333 215.765333 981.333333h602.112c73.6 0 104.362667-30.336 104.362667-104.362666V331.392l-1.194667-3.669333a131.285333 131.285333 0 0 0-36.608-68.693334L665.514667 38.997333z m10.325333 253.226667a46.762667 46.762667 0 0 1-46.421333-46.976v-146.773333l192.213333 193.749333H675.84z m130.816 605.824l-563.712 2.389333c-24.746667-0.298667-45.482667-17.408-45.653333-42.709333L194.218667 129.578667c0.213333-25.002667 20.352-45.952 45.098666-45.952l298.624 4.010666v158.421334c0 101.973333 58.538667 139.221333 133.077334 139.221333l165.973333-1.322667 4.224 469.504c0 16.810667-11.52 31.701333-34.56 44.586667z" fill="#2c2c2c" p-id="15708"></path><path d="M750.506667 682.666667H326.613333c-24.661333 0-44.373333 7.082667-44.373333 42.666666 0 35.285333 19.669333 42.666667 44.373333 42.666667h423.893334c23.893333 0 43.776-7.338667 43.776-42.624 0.085333-35.626667-19.797333-42.709333-43.776-42.709333zM317.696 512c-19.072 0-35.328 7.893333-35.328 42.666667 0 35.626667 16.256 42.666667 35.328 42.666666h335.274667c19.285333 0 34.944-7.04 34.944-42.666666 0-34.773333-15.658667-42.666667-35.029334-42.666667H317.696z" fill="#2c2c2c" p-id="15709"></path></svg>
         <span>发简历</span>
-      </div>
-      <div>
+      </button>
+      <button>
         <svg t="1767854657000" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="9195"><path d="M512 99C283.9 99 99 283.9 99 512s184.9 413 413 413 413-184.9 413-413S740.1 99 512 99z m0 764c-193.6 0-351-157.5-351-351s157.5-351 351-351 351 157.5 351 351-157.4 351-351 351z" fill="#2c2c2c" p-id="9196"></path><path d="M658 366c-12-12-31.8-12-43.8 0L512 468.2 409.8 366c-12-12-31.8-12-43.8 0s-12 31.8 0 43.8L468.2 512 366 614.2c-12 12-12 31.8 0 43.8 12 12 31.8 12 43.8 0L512 555.8 614.2 658c12 12 31.8 12 43.8 0 12-12 12-31.8 0-43.8L555.8 512 658 409.8c12.1-12.1 12.1-31.8 0-43.8z" fill="#2c2c2c" p-id="9197"></path></svg>        
         <span>不感兴趣</span>
+      </button>
+    </div>
+    <!-- window -->
+    <div class="window" v-show="windowshow">
+      <div class="window_box">
+        <div class="window_box_hard">
+          <p>191******40</p>
+        </div>
+        <div class="window_box_body">
+          <p>确定与对方交换{{ exchangecontent }}吗？</p>
+          <span>交换成功之后，双方可以查看彼此的电话号，您可前往
+            <a href="">管理{{ exchangecontent }}号</a>
+          </span>
+        </div>
+        <div class="window_box_foot">
+          <button @click="closewindow">取消</button>
+          <button style="color: rgb(8, 173, 173);">确认</button>
+        </div>
       </div>
     </div>
   </div>
@@ -39,6 +57,25 @@
 
 <script>
 export default {
+  data() {
+    return {
+      exchangecontent: "",
+      windowshow: false
+    }
+  },
+  methods: {
+    ExchangePhone() {
+      this.exchangecontent = "电话"
+      this.windowshow = true
+    },
+    ExchangeWeChat() {
+      this.exchangecontent = "微信"
+      this.windowshow = true
+    },
+    closewindow() {
+      this.windowshow = false
+    }
+  }
 }
 </script>
 
@@ -88,18 +125,69 @@ export default {
     padding: 0px 30px;
     /* border: 1px solid red; */
   }
-  .box .body div{
-    width: 60px;
+  .box .body button{
+    height: 50px;
     display: flex;
     flex-direction: column;
     font-size: 15px;
     text-align: center;
     color: rgb(109, 108, 108);
-    /* border: 1px solid red; */
+    border: none;
+    background-color: #fff;
   }
-  .box .body div .icon{
+  .box .body button .icon{
     height: 30px;
     align-items: center;
     /* background-color: #f8cece; */
+  }
+  /* window */
+  .window{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.1);
+    position:fixed;
+  }
+  .window .window_box{
+    width: 300px;
+    height: 350px;
+    background-color: #fff;
+    margin: 15vh auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .window .window_box_hard{
+    height: 50%;
+    background-color: rgb(235, 250, 250);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+  }
+  .window .window_box_body{
+    height: 40%;
+    /* background-color: #e8f8c9; */
+    padding: 0px 20px;
+  }
+  .window .window_box_body p{
+    font-size: 20px;
+  }
+  .window .window_box_body span{
+    font-size: 13px;
+    color: rgb(88, 88, 88);
+  }
+  .window .window_box_body span a{
+    text-decoration: none;
+    color: rgb(8, 173, 173);
+  }
+  .window .window_box_foot{
+    height: 15%;
+    /* background-color: #c9f3f8; */
+  }
+  .window .window_box_foot button{
+    width: 50%;
+    height: 100%;
+    font-size: 18px;
+    background-color: #fff;
+    border: 1px solid rgb(228, 226, 226);
   }
 </style>
