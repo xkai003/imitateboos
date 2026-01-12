@@ -7,8 +7,8 @@
         </router-link>
       </div>
       <div class="center">
-          <span>唐经理</span>
-          <span class="gsmc">广州小凯有限公司</span>
+          <span>{{ $route.query.name|| "小凯" }}</span>
+          <span class="gsmc">{{ $route.query.company|| "前端开发" }}</span>
       </div>
       <div class="right">
         <a href="">

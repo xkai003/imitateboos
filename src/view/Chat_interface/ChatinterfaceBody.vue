@@ -2,15 +2,15 @@
   <div class="background">
     <div class="head">
         <p>以下是30天内的聊天记录</p>
-        <p>12-31 10:00</p>
+        <p>{{ $route.query.time|| "15:00" }}</p>
     </div>
     <div class="box">
         <div class="lineone">
-          <span>前端开发</span>
-          <span class="lineonespan2">7000-12000元</span>
+          <span>{{ $route.query.post|| "前端开发" }}</span>
+          <span class="lineonespan2">{{ $route.query.salary|| "4500元" }}</span>
         </div>
         <div class="linetwo">
-          <span>广州环球贸易</span>
+          <span>{{ $route.query.company|| "小凯有限公司" }}</span>
         </div>
         <div class="linethree">
           <span>1-3年</span>
@@ -20,9 +20,9 @@
         </div>
         <div class="linefour">
           <div class="left">
-            <img src="../../assets/avatar.jpg" alt="">
+            <img :src="$route.query.hardimg || '/src/assets/HR_avatar.jpg'" alt="">
             <div class="name">
-              <span>唐经理*招聘者</span>
+              <span>{{ $route.query.name || "小凯" }}*招聘者</span>
             </div>
           </div>
           <div class="right">
@@ -42,7 +42,7 @@
         </div>
         <div>
             <div class="left">
-                <img src="../../assets/avatar.jpg" alt="">
+                <img :src="$route.query.hardimg || '/src/assets/HR_avatar.jpg'" alt="">
                 <div class="leftchat">
                     <span>你好，方便发一份简历过来吗？</span>
                 </div>
