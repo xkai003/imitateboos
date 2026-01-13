@@ -248,6 +248,10 @@ export default {
   border: none;
   border-radius: 10px;
 }
+.body .left .leftchat .foot button:hover{
+  background-color: #c9c9c9;
+  cursor: pointer;
+}
 .body .resume{
   display: flex;
   justify-content: center;
