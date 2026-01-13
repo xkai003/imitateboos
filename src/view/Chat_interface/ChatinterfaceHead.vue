@@ -140,6 +140,9 @@ export default {
     align-items: center;
     /* background-color: #f8cece; */
   }
+  .box .body button:hover{
+    cursor: pointer;
+  }
   /* window */
   .window{
     width: 100vw;
@@ -189,5 +192,9 @@ export default {
     font-size: 18px;
     background-color: #fff;
     border: 1px solid rgb(228, 226, 226);
+  }
+  .window .window_box_foot button:hover{
+    background-color: #fdfafa;
+    cursor: pointer;
   }
 </style>

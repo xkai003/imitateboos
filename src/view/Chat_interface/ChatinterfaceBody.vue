@@ -3,7 +3,6 @@
     <div class="head">
         <p>以下是30天内的聊天记录</p>
         <p>{{ $route.query.time|| "15:00" }}</p>
-
     </div>
     <div class="box">
         <div class="lineone">
@@ -41,12 +40,44 @@
                 <img src="../../assets/avatar.jpg" alt="">
             </div>
         </div>
-        <div>
-            <div class="left">
-                <img :src="$route.query.hardimg || '/src/assets/HR_avatar.jpg'" alt="">
-                <div class="leftchat">
-                    <span>你好，方便发一份简历过来吗？</span>
-                </div>
+        <div class="left">
+            <img :src="$route.query.hardimg || '/src/assets/HR_avatar.jpg'" alt="">
+            <!-- <div class="leftchat">
+                <span>你好，方便发一份简历过来吗？</span>
+            </div> -->
+            <div class="leftchat">
+              <div class="hard">        
+                <svg t="1766503574696" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15707"><path d="M665.514667 38.997333A133.888 133.888 0 0 0 592.512 1.28L215.765333 0c-73.386667 0-104.149333 30.336-104.149333 104.405333v779.264C116.394667 953.6 145.322667 981.333333 215.765333 981.333333h602.112c73.6 0 104.362667-30.336 104.362667-104.362666V331.392l-1.194667-3.669333a131.285333 131.285333 0 0 0-36.608-68.693334L665.514667 38.997333z m10.325333 253.226667a46.762667 46.762667 0 0 1-46.421333-46.976v-146.773333l192.213333 193.749333H675.84z m130.816 605.824l-563.712 2.389333c-24.746667-0.298667-45.482667-17.408-45.653333-42.709333L194.218667 129.578667c0.213333-25.002667 20.352-45.952 45.098666-45.952l298.624 4.010666v158.421334c0 101.973333 58.538667 139.221333 133.077334 139.221333l165.973333-1.322667 4.224 469.504c0 16.810667-11.52 31.701333-34.56 44.586667z" fill="#2c2c2c" p-id="15708"></path><path d="M750.506667 682.666667H326.613333c-24.661333 0-44.373333 7.082667-44.373333 42.666666 0 35.285333 19.669333 42.666667 44.373333 42.666667h423.893334c23.893333 0 43.776-7.338667 43.776-42.624 0.085333-35.626667-19.797333-42.709333-43.776-42.709333zM317.696 512c-19.072 0-35.328 7.893333-35.328 42.666667 0 35.626667 16.256 42.666667 35.328 42.666666h335.274667c19.285333 0 34.944-7.04 34.944-42.666666 0-34.773333-15.658667-42.666667-35.029334-42.666667H317.696z" fill="#2c2c2c" p-id="15709"></path></svg>
+                <span>我想要一份您的附件简历，您对否同意</span>
+              </div>
+              <div class="foot">
+                <button>拒绝</button>
+                <button @click="agree">同意</button>
+              </div>
+            </div>
+        </div>
+        <div class="head" v-show="resumeisshow">
+          <p>15:00</p>
+          <p>附件简历请求已发送</p>
+        </div>
+        <div class="resume" v-show="resumeisshow">
+            <div class="resumebox">
+              <div class="hard">        
+                <svg t="1766503574696" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15707"><path d="M665.514667 38.997333A133.888 133.888 0 0 0 592.512 1.28L215.765333 0c-73.386667 0-104.149333 30.336-104.149333 104.405333v779.264C116.394667 953.6 145.322667 981.333333 215.765333 981.333333h602.112c73.6 0 104.362667-30.336 104.362667-104.362666V331.392l-1.194667-3.669333a131.285333 131.285333 0 0 0-36.608-68.693334L665.514667 38.997333z m10.325333 253.226667a46.762667 46.762667 0 0 1-46.421333-46.976v-146.773333l192.213333 193.749333H675.84z m130.816 605.824l-563.712 2.389333c-24.746667-0.298667-45.482667-17.408-45.653333-42.709333L194.218667 129.578667c0.213333-25.002667 20.352-45.952 45.098666-45.952l298.624 4.010666v158.421334c0 101.973333 58.538667 139.221333 133.077334 139.221333l165.973333-1.322667 4.224 469.504c0 16.810667-11.52 31.701333-34.56 44.586667z" fill="#2c2c2c" p-id="15708"></path><path d="M750.506667 682.666667H326.613333c-24.661333 0-44.373333 7.082667-44.373333 42.666666 0 35.285333 19.669333 42.666667 44.373333 42.666667h423.893334c23.893333 0 43.776-7.338667 43.776-42.624 0.085333-35.626667-19.797333-42.709333-43.776-42.709333zM317.696 512c-19.072 0-35.328 7.893333-35.328 42.666667 0 35.626667 16.256 42.666667 35.328 42.666666h335.274667c19.285333 0 34.944-7.04 34.944-42.666666 0-34.773333-15.658667-42.666667-35.029334-42.666667H317.696z" fill="#2c2c2c" p-id="15709"></path></svg>
+                <span>简历.pdf</span>
+              </div>
+              <button>点击预览附件简历</button>
+            </div>
+        </div>
+        <div class="head" v-show="resumeisshow">
+          <p>{{ $route.query.time|| "15:00" }}</p>
+          <p>对方已同意，您的附件简历已发送给对方</p>
+          <p>对方已查看了你的附件简历</p>
+        </div>
+        <div class="left" v-show="resumeisshow">
+            <img :src="$route.query.hardimg || '/src/assets/HR_avatar.jpg'" alt="">
+            <div class="leftchat">
+                <span>简历已查收，这边会把简历转交给用人部门查看，如果合适我们这边会通过boos发送面试邀请，更新理解。</span>
             </div>
         </div>
     </div>
@@ -55,16 +86,27 @@
 
 <script>
 export default {
-
+  data() {
+    return {
+      resumeisshow: false
+    }
+  },
+  methods: {
+    agree() {
+      this.resumeisshow = true
+    }
+  }
 }
 </script>
 
 <style scoped>
 .background{
-    margin-top: 120px;
-    height: 100vh;
+    margin-top: 80px;
+    margin-bottom: 60px;
+    /* height: 100%; */
+    height: 120vh;
     background-color: #f5f6f7;
-    padding: 0px 10px;
+    padding: 30px 10px;
 }
 /* head */
 .head p{
@@ -75,7 +117,7 @@ export default {
 /* body */
 .body{
     width: 100%;
-    height: 250px;
+    /* height: 250px; */
     /* border: 1px solid red; */
 }
 .box{
@@ -168,18 +210,79 @@ export default {
     flex-direction: row;
     /* border: 1px solid red; */
 }
-.body .left .leftchat{
-    border-radius: 10px 10px 10px 0px;
-    margin-right: 50px;
-    color: black;
-    background-color: #fff;
-    font-size: 15px;
-    padding: 7px;
-}
 .body .left img{
   width: 30px;
   height: 30px;
-  margin: 25px 5px 0px 5px;
+  margin: 65px 5px 0px 5px;
   border-radius: 50%;
+}
+.body .left .leftchat{
+  border-radius: 10px 10px 10px 0px;
+  margin-right: 50px;
+  color: black;
+  background-color: #fff;
+  font-size: 15px;
+  padding: 7px;
+  /* border: 1px solid red; */
+}
+.body .left .leftchat .hard{
+  display: flex;
+  flex-direction: row;
+}
+.body .left .leftchat .hard .icon{
+  width: 50px;
+  height: 50px;
+}
+.body .left .leftchat .hard span{
+  margin-left: 10px;
+}
+.body .left .leftchat .foot{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.body .left .leftchat .foot button{
+  width: 45%;
+  height: 30px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 10px;
+}
+.body .resume{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid red; */
+}
+.body .resume .resumebox{
+  width: 65%;
+  height: 100px;
+  border: 1px solid rgb(30, 236, 243);
+  background-color: rgb(241, 253, 253);
+  padding: 15px;
+  border-radius: 10px;
+}
+.body .resume .resumebox .hard{
+  height: 50%;
+  display: flex;
+  flex-direction: row;
+}
+.body .resume .resumebox .hard .icon{
+  width: 30px;
+}
+.body .resume .resumebox .hard span{
+  line-height: 35px;
+  margin-left: 10px;
+}
+.body .resume .resumebox button{
+  width: 100%;
+  height: 35%;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(211, 240, 241);
+}
+.body .resume .resumebox button:hover{
+  cursor: pointer;
+  background-color: rgb(123, 238, 241);
 }
 </style>
