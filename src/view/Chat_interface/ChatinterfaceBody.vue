@@ -35,7 +35,7 @@
         <div>
             <div class="right">
                 <div class="rightchat">
-                    <span>你好，看到你的招聘信息，我很感兴趣，希望可以进一步沟通。</span>
+                    <span>{{ $route.query.content || "你好，看到你的招聘信息，我很感兴趣，希望可以进一步沟通。" }}</span>
                 </div>
                 <img src="../../assets/avatar.jpg" alt="">
             </div>
