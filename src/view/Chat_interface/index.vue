@@ -1,8 +1,8 @@
 <template>
   <div>
-    <ChatinterfaceHead></ChatinterfaceHead>
+    <ChatinterfaceHead @exchangecontentValue="exchangecontentFn"></ChatinterfaceHead>
     <!-- 步骤二：父亲传递数据给另一个子组件 -->
-    <ChatinterfaceBody :title="NewInputValue"></ChatinterfaceBody>
+    <ChatinterfaceBody :reply="NewInputValue" :content="NewExchangecontentValue"></ChatinterfaceBody>
     <!-- 步骤一：父亲接收到数据 -->
     <ChatinterfaceFoot @checkInputValue="changeFn"></ChatinterfaceFoot>
   </div>
@@ -20,12 +20,16 @@ export default {
     },
     data() {
       return {
-        NewInputValue: ''
+        NewInputValue: '',
+        NewExchangecontentValue: ''
       }
     },
     methods: {
       changeFn (newInputValue) {
         this.NewInputValue = newInputValue
+      },
+      exchangecontentFn (newexchangecontentValue) {
+        this.NewExchangecontentValue = newexchangecontentValue
       }
     }
 }

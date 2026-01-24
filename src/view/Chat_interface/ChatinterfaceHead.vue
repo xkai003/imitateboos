@@ -48,7 +48,7 @@
         </div>
         <div class="window_box_foot">
           <button @click="closewindow">取消</button>
-          <button style="color: rgb(8, 173, 173);">确认</button>
+          <button class="fontgreen" @click="confirmexchange">确认</button>
         </div>
       </div>
     </div>
@@ -73,6 +73,13 @@ export default {
       this.windowshow = true
     },
     closewindow() {
+      this.windowshow = false
+    },
+    // 确认交换
+    confirmexchange() {
+      // $emit 子传父
+      this.$emit('exchangecontentValue', this.exchangecontent)
+      // 最后关闭弹窗
       this.windowshow = false
     }
   }
@@ -192,6 +199,9 @@ export default {
     font-size: 18px;
     background-color: #fff;
     border: 1px solid rgb(228, 226, 226);
+  }
+  .window .window_box_foot .fontgreen{
+    color: rgb(8, 173, 173);
   }
   .window .window_box_foot button:hover{
     background-color: #fdfafa;
