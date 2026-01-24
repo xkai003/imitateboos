@@ -1,8 +1,10 @@
 <template>
   <div>
     <ChatinterfaceHead></ChatinterfaceHead>
-    <ChatinterfaceBody></ChatinterfaceBody>
-    <ChatinterfaceFoot></ChatinterfaceFoot>
+    <!-- 步骤二：父亲传递数据给另一个子组件 -->
+    <ChatinterfaceBody :title="NewInputValue"></ChatinterfaceBody>
+    <!-- 步骤一：父亲接收到数据 -->
+    <ChatinterfaceFoot @checkInputValue="changeFn"></ChatinterfaceFoot>
   </div>
 </template>
 
@@ -15,6 +17,16 @@ export default {
         ChatinterfaceHead,
         ChatinterfaceBody,
         ChatinterfaceFoot
+    },
+    data() {
+      return {
+        NewInputValue: ''
+      }
+    },
+    methods: {
+      changeFn (newInputValue) {
+        this.NewInputValue = newInputValue
+      }
     }
 }
 </script>
