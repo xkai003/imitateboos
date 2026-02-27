@@ -35,7 +35,7 @@ export default {
     top: 0;
     left: 0;
     width: 100%;
-    /* height: 35px; */
+    /* height: 35px; */ 
     background-color: #fff;
   }
   .box .left span{
